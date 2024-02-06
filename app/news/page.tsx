@@ -48,8 +48,6 @@ export default function Home() {
     getData(currentPage).then((data: any) => {
       setIsLoading(false);
 
-      console.log(data);
-
       if (data) {
         setList([...list, ...data.tvReportedInfo.row]);
         listCount.current += data.tvReportedInfo.row.length;

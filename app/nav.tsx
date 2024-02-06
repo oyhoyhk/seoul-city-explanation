@@ -1,15 +1,15 @@
 "use client";
 
+import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 
 export default function Nav() {
   const pathname = usePathname();
-  console.log(pathname);
   return (
     <div className="w-m flex justify-center items-center sticky top-0 bg-white">
       <div className="w-2/3 m-auto h-15 flex items-center border-b-2 border-gray-300 py-4 justify-between">
-        <img src="/logo.jpg" alt="logo" width="100px" />
+        <Image src="/logo.jpg" alt="logo" width={100} />
         <nav className="flex h-full">
           <div
             className={`mx-3 ${
