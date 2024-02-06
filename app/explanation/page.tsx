@@ -10,7 +10,7 @@ import Loading from "./loading";
 
 async function getData(index: number) {
   const res = await fetch(
-    EXPLANATION_API_URL + (index * 20 + 1) + "/" + (index + 1) * 20
+    "/api/explanations/" + (index * 20 + 1) + "/" + (index + 1) * 20
   );
 
   if (!res.ok) {
