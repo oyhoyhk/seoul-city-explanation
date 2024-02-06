@@ -1,16 +1,16 @@
 "use client";
 
 import { useEffect, useRef, useState } from "react";
-import { EXPLANATION_API_URL } from "../constants";
 import { parseString } from "xml2js";
 import { IRow } from "../interface";
-import Article from "./article";
 import { Metadata } from "next";
-import Loading from "./loading";
+import { NEWS_API_URL } from "../constants";
+import Article from "./article";
+import Loading from "../explanation/loading";
 
 async function getData(index: number) {
   const res = await fetch(
-    EXPLANATION_API_URL + (index * 20 + 1) + "/" + (index + 1) * 20
+    NEWS_API_URL + (index * 20 + 1) + "/" + (index + 1) * 20
   );
 
   if (!res.ok) {
@@ -48,12 +48,14 @@ export default function Home() {
     getData(currentPage).then((data: any) => {
       setIsLoading(false);
 
+      console.log(data);
+
       if (data) {
-        setList([...list, ...data.tvExplanationInfo.row]);
-        listCount.current += data.tvExplanationInfo.row.length;
+        setList([...list, ...data.tvReportedInfo.row]);
+        listCount.current += data.tvReportedInfo.row.length;
         if (totalCount === Infinity) {
           setTotalCount(
-            Number(data.tvExplanationInfo.list_total_count[0]) as number
+            Number(data.tvReportedInfo.list_total_count[0]) as number
           );
         }
       }

@@ -1,10 +1,8 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
-import "./globals.css";
-import Nav from "./nav";
+import Nav from "../nav";
 
 export const metadata: Metadata = {
-  title: "Seoul City News",
+  title: "News | Seeoul City",
   description: "Seoul City News",
 };
 
@@ -18,7 +16,10 @@ export default function RootLayout({
       <head>
         <link rel="icon" href="/favicon.ico" sizes="any" />
       </head>
-      <body>{children}</body>
+      <body>
+        <Nav />
+        {children}
+      </body>
     </html>
   );
 }
