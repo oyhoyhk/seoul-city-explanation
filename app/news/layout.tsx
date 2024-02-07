@@ -19,6 +19,17 @@ export default function RootLayout({
           httpEquiv="Content-Security-Policy"
           content="upgrade-insecure-requests"
         />
+        <meta
+          name="keywords"
+          content="Seoul, News, City, Broadcast, Explanation,서울시, 해명자료, 보도자료, 기사, 신문"
+        />
+        <meta charSet="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta http-equiv="Subject" content="Seoul City News" />
+        <meta
+          http-equiv="refresh"
+          content="revealtrans(Duration=1, Transition=23)"
+        />
       </head>
       <body>
         <Nav />
